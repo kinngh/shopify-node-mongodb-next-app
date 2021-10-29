@@ -33,3 +33,6 @@ This is a more in-depth guide on setting up the repo, if you're new to Shopify a
     - I prefer running a local `mongo` instance to save on time and ease of setup. Create a new folder in your project called `mongo` (it's added in `.gitignore` so you can git freely) and in a terminal window run `mongod --dbpath mongo/` to start a mongo instance in that folder. Ensure you're in the right folder.
     - In your second terminal window, run `npm run tunnel` to create a Local tunnel instance if you haven't already.
     - In your third terminal window (preferrably in your IDE), `npm run dev` or `npm run start` depending on how you want to test your app.
+
+- [ ] Next.js 12
+    - Next.js 12 brings in a lot of experimental features (as of October '21) like the Rust compiler, React Server Side Rendering and more. This can be configured from `next.config.js`
