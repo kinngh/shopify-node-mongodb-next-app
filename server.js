@@ -64,7 +64,7 @@ app.prepare().then(async () => {
         const { shop, accessToken, scope } = ctx.state.shopify;
         const host = ctx.query.host;
 
-        webhooksRegistrar(shop, accessToken);
+        webhooksRegistrar(shop, accessToken); //MARK:- TODO | Check to see if the store already has webhooks setup to avoid the failing re-registration of webhooks 
 
         ctx.redirect(`/?shop=${shop}&host=${host}`);
       },
