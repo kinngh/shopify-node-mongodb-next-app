@@ -2,23 +2,26 @@ import React from "react";
 import { Page, Card, Layout, Button } from "@shopify/polaris";
 import { useRouter } from "next/router";
 import { useQuery, gql } from "@apollo/client";
-import SubscriptionData from "../components/subscriptionData";
+import SubscriptionData from "../components/SubscriptionData.js";
 
 const ActiveSubscriptions = () => {
   const router = useRouter();
   const getActiveSubscriptions = gql`
     {
-      currentAppInstallation {
+      appInstallation {
         activeSubscriptions {
-          id
           name
           status
+          lineItems {
+            id
+          }
         }
       }
     }
   `;
 
   const { loading, error, data } = useQuery(getActiveSubscriptions);
+
   return (
     <React.Fragment>
       <Page>

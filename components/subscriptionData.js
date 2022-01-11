@@ -1,8 +1,3 @@
-/*
-  If you have multiple subscriptions running at the same time and using forEach on data array, be sure to pass the Key
-  or react will throw a "no HTML was returned" error
-*/
-
 import React from "react";
 
 const SubscriptionData = ({ error, loading, data }) => {
@@ -10,8 +5,8 @@ const SubscriptionData = ({ error, loading, data }) => {
   if (loading) return <p>Loading</p>;
 
   if (data) {
-    const { id, name, status } =
-      data.currentAppInstallation.activeSubscriptions[0];
+    const { name, status } = data.appInstallation.activeSubscriptions[0];
+    const { id } = data.appInstallation.activeSubscriptions[0].lineItems[0];
     return (
       <React.Fragment>
         <p>
@@ -23,6 +18,12 @@ const SubscriptionData = ({ error, loading, data }) => {
         <p>
           <strong>Status:</strong> {status}
         </p>
+      </React.Fragment>
+    );
+  } else {
+    return (
+      <React.Fragment>
+        <p>No recurring subscription data found.</p>
       </React.Fragment>
     );
   }
