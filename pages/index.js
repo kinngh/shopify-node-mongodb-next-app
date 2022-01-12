@@ -5,10 +5,10 @@ import UtilityComponent from "../components/utilComponent";
 
 const Index = (...props) => {
   const router = useRouter();
-  // const { shop } = props[0];
+  const { shop } = props[0];
   return (
     <Page>
-      <UtilityComponent />
+      {shop && <UtilityComponent shop={shop} />}
       <Card title="DEBUG" sectioned>
         <p>
           These are temporary placeholders to debug content. Once you're in the
