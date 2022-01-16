@@ -35,4 +35,5 @@ This is a more in-depth guide on setting up the repo, if you're new to Shopify a
     - In your third terminal window (preferrably in your IDE), `npm run dev` or `npm run start` depending on how you want to test your app.
 
 - [ ] Next.js 12
-    - Next.js 12 brings in a lot of experimental features (as of October '21) like the Rust compiler, React Server Side Rendering and more. This can be configured from `next.config.js`
+    - Next.js 12 brings in a lot of experimental features like the Rust compiler, React Server Side Rendering and more. This can be configured from `next.config.js`.
+    - The experimental Rust compiler can be turned off by specifying `swcMinify: false` in `next.config.js`
