@@ -8,14 +8,14 @@
  *
  * Update the following:
  *
- * route
+ * routePath
  */
 
 const Router = require("koa-router");
-const route = new Router();
+const routePath = new Router();
 
-route.post("/path", async (ctx) => {
+routePath.post("/path/to/route", async (ctx) => {
   ctx.body = "It works";
 });
 
-module.exports = route;
+module.exports = routePath;
