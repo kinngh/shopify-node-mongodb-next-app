@@ -13,10 +13,6 @@ The Shopify CLI generates an amazing starter app, but I wanted a quick-start app
 
 ## Notes
 
-### Temp
-
-- I'm still working on a reliable way to build return url for creating app susbcription. If you are aware of an option that directly calls via APIs and not cookies/local storage, please open a pull request.
-
 ### Setup
 
 - If you're new to Shopify app dev or need an in-depth guide, refer [SETUP.md](/SETUP.md) instead.

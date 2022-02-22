@@ -22,29 +22,29 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@apollo/client": "^3.5.7",
-    "@shopify/app-bridge-react": "^2.0.5",
-    "@shopify/app-bridge-utils": "^2.0.5",
-    "@shopify/koa-shopify-auth": "^4.1.4",
-    "@shopify/koa-shopify-webhooks": "^4.2.1",
-    "@shopify/polaris": "^7.5.0",
+    "@apollo/client": "^3.5.9",
+    "@shopify/app-bridge-react": "^2.0.11",
+    "@shopify/app-bridge-utils": "^2.0.11",
+    "@shopify/koa-shopify-auth": "^4.1.5",
+    "@shopify/koa-shopify-webhooks": "^4.4.2",
+    "@shopify/polaris": "^9.0.0",
     "cryptr": "^6.0.2",
-    "dotenv": "^11.0.0",
-    "graphql": "^16.2.0",
+    "dotenv": "^16.0.0",
+    "graphql": "^16.3.0",
     "koa": "^2.13.4",
     "koa-combine-routers": "^4.0.2",
     "koa-router": "^10.1.1",
-    "mongoose": "^6.1.6",
-    "next": "^12.0.7",
+    "mongoose": "^6.2.3",
+    "next": "^12.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "store": "^2.0.12",
-    "webpack": "^5.65.0"
+    "webpack": "^5.69.1"
   },
   "devDependencies": {
-    "eslint": "^8.6.0",
-    "eslint-config-next": "12.0.7",
+    "eslint": "^8.9.0",
+    "eslint-config-next": "12.1.0",
     "localtunnel": "^2.0.2",
-    "npm-check-updates": "^12.1.0"
+    "npm-check-updates": "^12.4.0"
   }
 }
