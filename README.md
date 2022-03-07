@@ -2,6 +2,12 @@
 
 An embedded app starter template to get up and ready with Shopify app development with JavaScript.
 
+# Update
+
+Building on a custom Koa server is a _little_ too complicated for my taste and will be moving towards Express.js based stack instead, to build an easier to maintain repo.
+
+[Shopify Express.js x MongoDB Boilerplate](https://github.com/kinngh/shopify-express-mongodb-app)
+
 ## Why I made this
 
 The Shopify CLI generates an amazing starter app, but I wanted a quick-start app that had:
