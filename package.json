@@ -1,6 +1,6 @@
 {
   "name": "shopify-node-mongodb-next-app",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Shopify Boilerplate Code written in Next, Node, MongoDB and GraphQL",
   "main": "server.js",
   "scripts": {
@@ -22,11 +22,11 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@apollo/client": "^3.5.9",
-    "@shopify/app-bridge-react": "^2.0.11",
-    "@shopify/app-bridge-utils": "^2.0.11",
-    "@shopify/koa-shopify-auth": "^4.1.5",
-    "@shopify/koa-shopify-webhooks": "^4.4.2",
+    "@apollo/client": "^3.5.10",
+    "@shopify/app-bridge-react": "^2.0.15",
+    "@shopify/app-bridge-utils": "^2.0.15",
+    "@shopify/koa-shopify-auth": "^5.0.3",
+    "@shopify/koa-shopify-webhooks": "^4.4.3",
     "@shopify/polaris": "^9.0.0",
     "cryptr": "^6.0.2",
     "dotenv": "^16.0.0",
@@ -34,17 +34,17 @@
     "koa": "^2.13.4",
     "koa-combine-routers": "^4.0.2",
     "koa-router": "^10.1.1",
-    "mongoose": "^6.2.3",
+    "mongoose": "^6.2.4",
     "next": "^12.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "store": "^2.0.12",
-    "webpack": "^5.69.1"
+    "webpack": "^5.70.0"
   },
   "devDependencies": {
-    "eslint": "^8.9.0",
+    "eslint": "^8.10.0",
     "eslint-config-next": "12.1.0",
     "localtunnel": "^2.0.2",
-    "npm-check-updates": "^12.4.0"
+    "npm-check-updates": "^12.5.2"
   }
 }
