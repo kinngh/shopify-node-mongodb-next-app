@@ -2,6 +2,9 @@
 
 An embedded app starter template to get up and ready with Shopify app development with JavaScript.
 
+## Update
+I know Shopify has switched to Express.js x React.js and honestly, it's much better. I'm working on a boilerplate that is influenced by the new template, just like this one was, with all the required stuff hooked up. I'll push out updates as soon as I have anything to share here in the Readme or over at [@kinngh](https://twitter.com/kinngh) on Twitter.
+
 ## Why I made this
 
 The Shopify CLI generates an amazing starter app, but I wanted a quick-start app that had:
