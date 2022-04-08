@@ -64,7 +64,7 @@ app.prepare().then(async () => {
         const { shop, accessToken, scope } = ctx.state.shopify;
         const host = ctx.query.host;
 
-        webhooksRegistrar(shop, accessToken); //MARK:- TODO | Check to see if the store already has webhooks setup to avoid the failing re-registration of webhooks 
+        webhooksRegistrar(shop, accessToken); //MARK:- TODO | Check to see if the store already has webhooks setup to avoid the failing re-registration of webhooks
 
         ctx.redirect(`/?shop=${shop}&host=${host}`);
       },
@@ -89,22 +89,26 @@ app.prepare().then(async () => {
   router.get("/_next/webpack-hmr", handleRequest); // Webpack content is clear
   router.get("(.*)", async (ctx) => {
     const shop = ctx.query.shop;
-    const findShopCount = await SessionModel.countDocuments({ shop });
+    const findShopCount = await SessionModel.countDocuments({
+      shop,
+      isActive: true,
+    });
 
-    if (findShopCount < 2) {
-      await SessionModel.deleteMany({ shop });
+    if (findShopCount < 1) {
+      await SessionModel.findOneAndUpdate({ shop }, { isActive: true });
       ctx.redirect(`/auth?shop=${shop}`);
     } else {
       await handleRequest(ctx);
     }
   });
 
+  server.use(router.allowedMethods());
+  server.use(router.routes());
+
   //MARK:- Routes and routers
   server.use(webhookRouters());
   server.use(userRoutes());
 
-  server.use(router.allowedMethods());
-  server.use(router.routes());
   server.listen(port, () => {
     console.log(`--> Ready on http://localhost:${port}`);
   });

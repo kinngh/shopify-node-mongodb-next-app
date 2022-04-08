@@ -36,7 +36,8 @@ const appUninstallWebhook = async (shop, accessToken) => {
 
 appUninstallRoute.post(`${webhookUrl}`, webhook, async (ctx) => {
   const shop = ctx.state.webhook.payload.domain;
-  await SessionModel.deleteMany({ shop });
+  var regexp = new RegExp("^" + shop);
+  await SessionModel.deleteMany({ shop: regexp });
   console.log(`--> Deleted records for ${shop}`);
 });
 
