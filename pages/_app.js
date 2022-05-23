@@ -1,4 +1,3 @@
-import App from "next/app";
 import { AppProvider } from "@shopify/polaris";
 import { Provider, useAppBridge } from "@shopify/app-bridge-react";
 import { authenticatedFetch } from "@shopify/app-bridge-utils";
@@ -34,28 +33,25 @@ function MyProvider(props) {
   );
 }
 
-class MyApp extends App {
-  render() {
-    const { Component, pageProps, host, shop } = this.props;
-    return (
-      <AppProvider i18n={translations}>
-        <Provider
-          config={{
-            apiKey: API_KEY,
-            host: host,
-            forceRedirect: true,
-          }}
-        >
-          <MyProvider Component={Component} {...pageProps} shop={shop} />
-        </Provider>
-      </AppProvider>
-    );
-  }
-}
+const MyApp = (props) => {
+  const { Component, pageProps, shop } = props;
+  const providerConfig = {
+    host: Buffer.from(appOrigin).toString("base64"),
+    apiKey: API_KEY,
+    forceRedirect: true,
+  };
+
+  return (
+    <AppProvider i18n={translations}>
+      <Provider config={providerConfig}>
+        <MyProvider Component={Component} {...pageProps} shop={shop} />
+      </Provider>
+    </AppProvider>
+  );
+};
 
 MyApp.getInitialProps = async ({ ctx }) => {
   return {
-    host: ctx.query.host,
     shop: ctx.query.shop,
   };
 };

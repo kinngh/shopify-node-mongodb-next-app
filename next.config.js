@@ -21,11 +21,4 @@ module.exports = {
 
     return config;
   },
-  /*
-    experimental: {
-      concurrentFeatures: true, //server side streaming
-      serverComponents: true, //React server side components
-      urlImports: ["https://cdn.whitelisted-url.com/"] //To use URL imports, domain must first be whitelisted
-    },
-  */
 };

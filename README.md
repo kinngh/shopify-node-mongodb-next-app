@@ -2,7 +2,8 @@
 
 An embedded app starter template to get up and ready with Shopify app development with JavaScript.
 
-## Update
+# Update
+
 - [Express x React x Vite x MongoDB repo](https://github.com/kinngh/shopify-node-express-mongodb-app) is now live
 - This repo will still be updated for as long as I can maintain it, since I have production apps running on this boilerplate.
 

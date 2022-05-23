@@ -1,8 +1,3 @@
-/*
-  MARK:- Bug (Minor)
-  The returnURL will trigger webhooks again, but not auth dialog to merchant.
-  Better update coming soon™*/
-
 import { Page, Card, Button } from "@shopify/polaris";
 import { useMutation, gql } from "@apollo/client";
 import { useRouter } from "next/router";

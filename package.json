@@ -1,16 +1,17 @@
 {
   "name": "shopify-node-mongodb-next-app",
-  "version": "0.1.9",
+  "version": "0.0.1",
   "description": "Shopify Boilerplate Code written in Next, Node, MongoDB and GraphQL",
   "main": "server.js",
   "scripts": {
     "update": "ncu -u",
     "update:check": "ncu",
-    "lint": "next lint",
+    "pretty": "prettier --write .",
     "tunnel": "lt --port 8081",
-    "dev": "rm -rf .next && node server.js",
-    "build": "rm -rf .next && NEXT_TELEMETRY_DISABLED=1 next build",
-    "start": "npm run build && NODE_ENV=production node server.js"
+    "dev": "node server.js",
+    "build": "NEXT_TELEMETRY_DISABLED=1 next build",
+    "build:start": "npm run build;NODE_ENV=production node server.js",
+    "start": "NODE_ENV=production node server.js"
   },
   "author": {
     "name": "Harshdeep Singh Hura",
@@ -22,29 +23,28 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@apollo/client": "^3.5.10",
-    "@shopify/app-bridge-react": "^2.0.25",
-    "@shopify/app-bridge-utils": "^2.0.25",
+    "@apollo/client": "^3.6.4",
+    "@shopify/app-bridge-react": "^2.0.30",
+    "@shopify/app-bridge-utils": "^2.0.30",
     "@shopify/koa-shopify-auth": "^5.0.3",
-    "@shopify/koa-shopify-webhooks": "^4.4.4",
-    "@shopify/polaris": "^9.5.0",
+    "@shopify/koa-shopify-webhooks": "^5.0.0",
+    "@shopify/polaris": "^9.8.0",
     "cryptr": "^6.0.3",
-    "dotenv": "^16.0.0",
-    "graphql": "^16.3.0",
+    "dotenv": "^16.0.1",
+    "graphql": "^16.5.0",
     "koa": "^2.13.4",
     "koa-combine-routers": "^4.0.2",
     "koa-router": "^10.1.1",
-    "mongoose": "^6.3.1",
-    "next": "^12.1.5",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
+    "mongoose": "^6.3.4",
+    "next": "^12.1.6",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
     "store": "^2.0.12",
-    "webpack": "^5.72.0"
+    "webpack": "^5.72.1"
   },
   "devDependencies": {
-    "eslint": "^8.14.0",
-    "eslint-config-next": "12.1.5",
     "localtunnel": "^2.0.2",
-    "npm-check-updates": "^12.5.9"
+    "npm-check-updates": "^13.0.3",
+    "prettier": "^2.6.2"
   }
 }
