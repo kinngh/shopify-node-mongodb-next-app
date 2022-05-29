@@ -9,6 +9,7 @@ import {
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
+import App from "next/app";
 
 function MyProvider(props) {
   const app = useAppBridge();
@@ -33,22 +34,24 @@ function MyProvider(props) {
   );
 }
 
-const MyApp = (props) => {
-  const { Component, pageProps, shop } = props;
-  const providerConfig = {
-    host: Buffer.from(appOrigin).toString("base64"),
-    apiKey: API_KEY,
-    forceRedirect: true,
-  };
-
-  return (
-    <AppProvider i18n={translations}>
-      <Provider config={providerConfig}>
-        <MyProvider Component={Component} {...pageProps} shop={shop} />
-      </Provider>
-    </AppProvider>
-  );
-};
+class MyApp extends App {
+  render() {
+    const bufferUrl = appOrigin.replace(/https:\/\//, "");
+    const providerConfig = {
+      host: Buffer.from(bufferUrl).toString("base64"),
+      apiKey: API_KEY,
+      forceRedirect: true,
+    };
+    const { Component, pageProps, shop } = this.props;
+    return (
+      <AppProvider i18n={translations}>
+        <Provider config={providerConfig}>
+          <MyProvider Component={Component} {...pageProps} shop={shop} />
+        </Provider>
+      </AppProvider>
+    );
+  }
+}
 
 MyApp.getInitialProps = async ({ ctx }) => {
   return {

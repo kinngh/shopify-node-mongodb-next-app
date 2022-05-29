@@ -1,47 +1,25 @@
 # Shopify Node.js x Next.js x MongoDB Boilerplate
 
-An embedded app starter template to get up and ready with Shopify app development with JavaScript.
-
 # Update
 
-- [Express x React x Vite x MongoDB repo](https://github.com/kinngh/shopify-node-express-mongodb-app) is now live
-- This repo will still be updated for as long as I can maintain it, since I have production apps running on this boilerplate.
+# [Express x React x Vite x MongoDB repo](https://github.com/kinngh/shopify-node-express-mongodb-app)
 
-## Why I made this
+**Q: Why archive the repo?**
 
-The Shopify CLI generates an amazing starter app, but I wanted a quick-start app that had:
+- The [Express x React x Vite x MongoDB repo](https://github.com/kinngh/shopify-node-express-mongodb-app) gives more control on the server, is beginner friendly and in my experience, `~10x` faster on dev and `~3x - 7x` faster on production, better build times and lower latency. Running into problems in Koa always meant using more packages and with the lack of control over how the internal redirections work among other issues, I decided to move on and focus on one repo instead.
 
-- MongoDB based sessions/persistence.
-- Recurring Subscriptions setup and ready to go.
-- Local Tunnel instead of Ngrok to avoid use of commercial software.
-- Misc boilerplate code and templates to quickly setup inApp subscriptions, routes, webhooks and more.
+**Q: How do I migrate?**
 
-## Notes
+- `useRouter` is replaced with `navigate`
+- `pages` and `components` remain almost the same, except for routing and any Next.js libraries.
+- `server.js` is now a separate folder with middlewares separated out. You can directly build on it.
+- Webhooks is now a three step process. Check [`__templates/webhooks.js`](https://github.com/kinngh/shopify-node-express-mongodb-app/blob/main/__templates/webhooks.js) to understand how webhook registration works.
+- Mongo Models can be directly brought over.
 
-### Setup
+If I missed anything, I'm sure the new repo is clear enough to answer any and all questions that may arise. If not, please head over to [discussions](https://github.com/kinngh/shopify-node-express-mongodb-app/discussions) and contributors may come to rescue, if not, there's always Stack Overflow.
 
-- If you're new to Shopify app dev or need an in-depth guide, refer [SETUP.md](/SETUP.md) instead.
+**Q: I wanted a Next.js repo to deploy on Vercel/Netlify**
 
-- Run `npm i --force` to install all dependencies.
-- Create `.env` file based on `.env.example`.
-- Run `npm run tunnel` and add the URL at `SHOPIFY_APP_URL` in `.env` and your app settings in your Partner Dashboard.
-  - If you don't update the URL in `.env` and app settings, you're going to run into "URI Not Whitelisted" error.
+- This repo used a custom Next.js server that is not supported on either platforms and you'd have to deploy on AWS/NorthFlank/Heroku anyways.
 
----
-
-- The GDPR endpoints are available in `routes/gdpr/` folder. Add the following URLs in the GDPR section of your App Setup
-  - Data Request Endpoint: `/app/gdpr/customers_data_request`
-  - Data Erase Endpoint: `/app/gdpr/customers_redact`
-  - Shop Data Erase Endpoint: `/app/gdpr/shop_redact`
-
-### Run
-
-- Open two terminal windows with `npm run tunnel` and `npm run dev`, this way you have one session running the `localtunnel` at all times.
-- If you're using a locally hosted version of MongoDB, ensure `mongod` server is running.
-  - To specify a directory for your MongoDB database, run `mongod --dbpath /path/to/directory`
-
-### Misc notes
-
-- Most scripts in `package.json` contain `rm -rf .next` to remove the generated `.next` folder to reduce caching errors. If you're on Windows, please switch them out to `rmdir .next`
-- MongoDB collections are kept separate to allow for flexibility while building applications. Feel free to rewrite them.
-- When pushing to production, add `__templates` to `.gitignore`.
+# [Express x React x Vite x MongoDB repo](https://github.com/kinngh/shopify-node-express-mongodb-app)
