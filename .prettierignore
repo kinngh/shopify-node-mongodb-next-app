@@ -1,7 +1,0 @@
-## Prettier will ignore following files and directories
-.next/
-dist/
-mongo/
-__templates/
-node_modules/
-package-lock.json
